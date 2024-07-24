@@ -1,0 +1,392 @@
+name: grpc-dotnet-NET8
+testcases:
+  - name: Package grpc-dotnet-NET8 Aggregator
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Aggregator --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 1 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Blazor
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Blazor --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 300 # 5 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "DotNet project Server JavaScript packaged to: .veracode/output/auto/veracode-auto-pack-Server-dotnet-js.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Certifier
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Certifier --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Channeler
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Downloader --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Coder
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Coder --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Compressor
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Compressor --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Container
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Container --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Frontend zipped and saved to: .veracode/output/auto/veracode-auto-pack-Frontend-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "DotNet project Frontend JavaScript packaged to: .veracode/output/auto/veracode-auto-pack-Frontend-dotnet-js.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Backend zipped and saved to: .veracode/output/auto/veracode-auto-pack-Backend-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 3 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Counter
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Counter --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Downloader
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Downloader --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET7 Error
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Reflector --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Frameworker
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Frameworker --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Greeter
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Greeter --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Interceptor
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Interceptor --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Liber
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Liber --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Locator
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Locator --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Mailer
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Mailer --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Progressor
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Progressor --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET7 Racer
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Reflector --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Reflector
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Reflector --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET7 Retrier
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Reflector --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Spar
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Spar --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "JavaScript project ClientApp packaged to: .veracode/output/auto/veracode-auto-pack-ClientApp-js.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 1 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Tester
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Tester --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Ticketer
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Ticketer --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Transcoder
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Transcoder --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "DotNet project Server JavaScript packaged to: .veracode/output/auto/veracode-auto-pack-Server-dotnet-js.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Transporter
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Transporter --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Uploader
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Uploader --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Vigor
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Vigor --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
+  - name: Package grpc-dotnet-NET8 Worker
+    steps:
+      - type: exec
+        script: |
+          cd ../
+          {{.script-path}}/bin/veracode package --source examples/Worker --type directory --output .veracode/output/auto --trust
+        assertions:
+          - result.code ShouldEqual 0
+          - result.timeseconds ShouldBeLessThan 120 # 2 minutes
+          - |
+            result.systemout ShouldContainSubstring "Project Server zipped and saved to: .veracode/output/auto/veracode-auto-pack-Server-dotnet.zip"
+          - |
+            result.systemout ShouldContainSubstring "Project Client zipped and saved to: .veracode/output/auto/veracode-auto-pack-Client-dotnet.zip"
+          - result.systemout ShouldContainSubstring "Successfully created 2 artifact(s)."
